@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 # compile BUILD_DIR CACHE_DIR ENV_DIR
 
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+. "${ENV_DIR}/GITHUB_DEPLOY_SSH_KEY"
+
 if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
+    echo "-----> Can't find GITHUB_DEPLOY_SSH_KEY in the environment"
     exit 1
 fi
 
