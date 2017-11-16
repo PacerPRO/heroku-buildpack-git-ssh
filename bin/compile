@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# compile BUILD_DIR CACHE_DIR ENV_DIR
 
 if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
     exit 1

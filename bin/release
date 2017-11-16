@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
+# bin/release BUILD_DIR
+
+echo "--- {}"
 exit 0

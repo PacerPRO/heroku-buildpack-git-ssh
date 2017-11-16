@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# bin/detect <build-dir>
+# bin/detect BUILD_DIR
 
-echo "git ssh"
+echo "GitHub private ssh key"
 exit 0
