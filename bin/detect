@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -xe
+#!/usr/bin/env bash
 
 if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
     exit 1

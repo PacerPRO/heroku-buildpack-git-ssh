@@ -1,8 +1,10 @@
-#!/usr/bin/env bash -xe
+#!/usr/bin/env bash
 
 if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
     exit 1
 fi
+
+set -xe
 
 mkdir -p -m 0700 ~/.ssh
 chmod 0700 ~/.ssh/
