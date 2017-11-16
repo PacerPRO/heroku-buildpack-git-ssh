@@ -1,0 +1,25 @@
+#!/usr/bin/env bash -xe
+
+if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
+    exit 1
+fi
+
+mkdir -p -m 0700 ~/.ssh
+chmod 0700 ~/.ssh/
+
+# Must be previously base64 encoded
+echo $GITHUB_DEPLOY_SSH_KEY | base64 --decode > ~/.ssh/auto_installed_deploy_key
+chmod 0600 ~/.ssh/deploy_key
+
+touch ~/.ssh/config
+cat <<EOT >> ~/.ssh/config
+
+# ----- AUTO INSTALLED BY pacerpro/app/bin/setup-ssh.sh
+Host github.com
+    IdentityFile ~/.ssh/auto_installed_deploy_key
+    IdentitiesOnly yes
+    UserKnownHostsFile=/dev/null
+    StrictHostKeyChecking no
+# -----
+
+EOT
