@@ -1,2 +1,5 @@
 #!/usr/bin/env bash
+# bin/detect <build-dir>
+
+echo "git ssh"
 exit 0
