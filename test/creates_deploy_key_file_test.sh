@@ -4,9 +4,16 @@
 
 testCreateKeyFile()
 {
-  assertEquals 1 1
-
   compile
 
   assertCapturedSuccess
+}
+
+testKeyFileIsCorrect()
+{
+  compile
+
+  testKey = `echo xyz | base64`
+
+  assertEquals $testKey `cat ~/.ssh/auto_installed_deploy_key`
 }
