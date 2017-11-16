@@ -13,7 +13,5 @@ testKeyFileIsCorrect()
 {
   compile
 
-  testKey = `echo xyz | base64`
-
-  assertEquals $testKey `cat ~/.ssh/auto_installed_deploy_key`
+  assertEquals `echo xyz | base64` `cat ~/.ssh/auto_installed_deploy_key`
 }
