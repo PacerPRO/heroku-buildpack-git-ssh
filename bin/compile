@@ -4,8 +4,7 @@ if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
     exit 1
 fi
 
-set -xe
-
+echo "-----> Setting up ssh"
 mkdir -p -m 0700 ~/.ssh
 chmod 0700 ~/.ssh/
 
