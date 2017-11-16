@@ -2,11 +2,27 @@
 
 . ${BUILDPACK_TEST_RUNNER_HOME}/lib/test_utils.sh
 
-testCreateKeyFile()
+testCompile()
 {
   compile
 
   assertCapturedSuccess
+}
+
+testKeyFile()
+{
+  compile
+
+  assertCaptured "-----> Setting up ssh"
+
+  assertTrue "[ -f ~/.ssh/auto_installed_deploy_key ]"
+}
+
+testConfigFile()
+{
+  compile
+
+  assertTrue "[ -f ~/.ssh/config ]"
 }
 
 testSSHTest()
