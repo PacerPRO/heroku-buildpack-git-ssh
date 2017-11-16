@@ -9,13 +9,6 @@ testCreateKeyFile()
   assertCapturedSuccess
 }
 
-testKeyFileIsCorrect()
-{
-  compile
-
-  assertEquals xyz `cat ~/.ssh/auto_installed_deploy_key`
-}
-
 testSSHTest()
 {
   compile
