@@ -3,6 +3,7 @@
 if [ -z "$GITHUB_DEPLOY_SSH_KEY" ]; then
     exit 1
 else
+    echo "-----> Deploy key detected"
     exit 0
 fi
 
